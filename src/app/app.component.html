@@ -1,0 +1,112 @@
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <a routerLink="/dashboard">
+                <h3>{{ title }}</h3>
+            </a>
+
+        </div>
+
+        <ul class="list-unstyled components">
+            <div class="col-lg-12">
+                <div class="col-lg-4"><img src="https://png.icons8.com/ios/50/000000/appointment-scheduling.png" class="img-circle" id="icon"></div>
+                <div class="col-lg-7">
+                    <h5>Usuario.apellido</h5>
+                    <p>En linea</p>
+                </div>
+            </div>
+            <hr>
+            <hr>
+            <li class="active">
+                <a routerLink="dashboard"><img src="https://png.icons8.com/ios/50/000000/home.png" class="icon-min">Home</a>
+            </li>
+            <li class="">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="https://png.icons8.com/ios/50/000000/home.png" class="icon-min">Forms</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a routerLink="insert" href="">Insert</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><img src="https://png.icons8.com/ios/50/000000/info.png" class="icon-min">About</a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="https://png.icons8.com/ios/50/000000/folder-invoices.png" class="icon-min">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><img src="https://png.icons8.com/ios/50/000000/print.png" class="icon-min">Portfolio</a>
+            </li>
+            <li>
+                <a href="#"><img src="https://png.icons8.com/ios/50/000000/calendar.png" class="icon-min">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="navbar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img src="https://png.icons8.com/ios/50/000000/add-reminder.png" class="icon-min"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img src="https://png.icons8.com/ios/50/000000/secured-letter.png" class="icon-min"></a>
+                        </li>
+                        <li class="nav-item dropleft">
+                            <a class="nav-link dropleft-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <li class=""><span class="oi-text-replace"></span><img src="https://png.icons8.com/ios/50/000000/appointment-scheduling.png" class="icon-min">Users</li>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <router-outlet></router-outlet>
+
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#sidebarCollapse').on('click', function() {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
